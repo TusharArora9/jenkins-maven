@@ -1,0 +1,18 @@
+pipeline{
+agent any
+stages{
+stage("maven site"){
+steps{
+sh "echo "hello world!" > /root/index.html"
+}
+}
+stage("deploy-httpd"){
+steps{
+sh """
+scp -o StrictHostKeyChecking=no /root/index.html  192.168.231.130:/var/www/html/
+ssh root@192.168.231.130 systemctl restart httpd
+"""
+}
+}
+}
+}
