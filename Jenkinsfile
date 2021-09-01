@@ -10,8 +10,8 @@ sh "mvn -f /root/project/pom.xml clean package"
 stage("deploy-httpd"){
 steps{
 sh """
-scp -o StrictHostKeyChecking=no /root/project/target/gs-maven-0.1.0.jar  192.168.231.129:/var/www/html/
-ssh root@192.168.231.129 systemctl restart httpd
+scp -o StrictHostKeyChecking=no /root/project/target/gs-maven-0.1.0.jar  192.168.231.130:/var/www/html/
+ssh root@192.168.231.130 systemctl restart httpd
 """
 }
 }
