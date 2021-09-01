@@ -3,7 +3,7 @@ agent any
 stages{
 stage("maven site"){
 steps{
-sh "echo "hello world!" > /root/index.html"
+sh "echo hello world! > /root/index.html"
 }
 }
 stage("deploy-httpd"){
