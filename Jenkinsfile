@@ -4,7 +4,7 @@ stages{
 stage("maven site"){
 steps{
 sh "mvn -f /root/pro/gs-maven/complete/pom.xml clean package"
-//sh "mvn -f /root/pro/gs-maven/complete/pom.xml site"
+sh "mvn -f /root/pro/gs-maven/complete/pom.xml site"
 }
 }
 stage("deploy-httpd"){
